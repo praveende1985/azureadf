@@ -1,0 +1,17 @@
+{
+	"name": "adf-sept-dev",
+	"properties": {
+		"globalParameters": {
+			"conainervalue": {
+				"type": "string",
+				"value": "adlssep2025praveen"
+			}
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f54d42ec-2b88-4362-8853-a0fd8b2f3399",
+		"tenantId": "dac23707-7925-4af8-ac25-cc90769bc028"
+	}
+}

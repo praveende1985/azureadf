@@ -1,0 +1,62 @@
+{
+	"name": "FilterSample",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_getmetadata",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			},
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get Metadata1').output.childItems",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@OR(contains(item().name,'emp'),contains(item().name, 'cust'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-09-17T13:54:01Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

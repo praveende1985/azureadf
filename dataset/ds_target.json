@@ -1,0 +1,27 @@
+{
+	"name": "ds_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsadls_soruce",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "File DataSets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "target",
+				"fileSystem": "adlscontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,32 @@
+{
+	"name": "setvariable",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "pipelineid",
+					"value": {
+						"value": "@pipeline().GroupId",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"pipelineid": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-09-17T13:54:01Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

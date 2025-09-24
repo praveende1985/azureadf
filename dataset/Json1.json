@@ -1,0 +1,21 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lsadls_soruce",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "test.json",
+				"folderPath": "target",
+				"fileSystem": "adlscontainer"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

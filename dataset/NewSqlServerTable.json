@@ -1,0 +1,16 @@
+{
+	"name": "NewSqlServerTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NewSqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "NewSqlSever"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
