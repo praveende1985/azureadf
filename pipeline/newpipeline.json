@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "export to cicd",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
